@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professionelles Portfolio – Technikerin im Bauwesen mit Erfahrung im Hochbau, auf Baustellen und im Planungsbüro."
+    />
+    <title>Portfolio · Technikerin im Bauwesen</title>
+
+    <style>
+      :root {
+        --primary: #153a63;
+        --primary-2: #215a94;
+        --accent: #d8a54b;
+        --ink: #0f172a;
+        --text: #334155;
+        --muted: #64748b;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --line: #e2e8f0;
+        --shadow: 0 18px 45px rgba(2, 6, 23, 0.08);
+        --shadow-sm: 0 10px 30px rgba(2, 6, 23, 0.07);
+        --radius: 24px;
+        --radius-sm: 18px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(33, 90, 148, 0.08),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(216, 165, 75, 0.09),
+            transparent 24%
+          ),
+          var(--bg);
+        line-height: 1.65;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 2rem));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 5.5rem 0;
+      }
+
+      .section-head {
+        margin-bottom: 2rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-2);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 2.2rem;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--primary-2));
+        border-radius: 999px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--ink);
+        line-height: 1.15;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 5vw, 4.5rem);
+        letter-spacing: -0.03em;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 3vw, 2.7rem);
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      p.lead {
+        font-size: 1.08rem;
+        color: var(--muted);
+        max-width: 64ch;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(18px);
+        background: rgba(248, 250, 252, 0.82);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 78px;
+      }
+
+      .brand {
+        font-weight: 900;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        font-size: 1.05rem;
+      }
+
+      .brand span {
+        color: var(--primary-2);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 78px;
+          left: 0;
+          width: 100%;
+          background: white;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1rem;
+          border-bottom: 1px solid var(--line);
+          display: none;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+      }
+
+      .nav-links a {
+        color: var(--text);
+        font-weight: 650;
+        font-size: 0.96rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-2);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        padding: 0.95rem 1.25rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 800;
+        transition: 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        color: white;
+        background: #00a7ff;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.03);
+      }
+
+      .btn-secondary {
+        color: var(--ink);
+        background: white;
+        border-color: var(--line);
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+        border-color: #cbd5e1;
+      }
+
+      .hero {
+        padding: 4.4rem 0 4rem;
+      }
+
+      .hero-grid {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        border-radius: 30px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        gap: 0.55rem;
+        align-items: center;
+        border-radius: 999px;
+        background: rgba(21, 58, 99, 0.08);
+        color: var(--primary);
+        padding: 0.55rem 0.85rem;
+        font-weight: 800;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.85rem;
+        flex-wrap: wrap;
+        margin-top: 1.6rem;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1.8rem;
+      }
+
+      .stat {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 1rem;
+      }
+
+      .stat strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1.35rem;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-gallery {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1rem;
+        min-height: 520px;
+      }
+
+      .hero-gallery .main-photo,
+      .hero-gallery .side-photo {
+        position: relative;
+        overflow: hidden;
+        border-radius: 28px;
+        background: linear-gradient(145deg, #dbeafe, #f8fafc);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .hero-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .side-stack {
+        display: grid;
+        gap: 1rem;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .photo-label {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        padding: 0.55rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.72);
+        color: white;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .about-grid,
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.6rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .card.soft {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(247, 250, 252, 0.95)
+        );
+      }
+
+      .info-list,
+      .skill-list,
+      .timeline,
+      .contact-list {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .info-item,
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.9rem;
+        border-bottom: 1px dashed var(--line);
+      }
+
+      .info-item:last-child,
+      .contact-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .kicker {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .value {
+        color: var(--ink);
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .chip {
+        padding: 0.7rem 0.9rem;
+        border-radius: 999px;
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font-weight: 650;
+        font-size: 0.94rem;
+      }
+
+      .grid-2,
+      .grid-3 {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding: 1.1rem 1.1rem 1.1rem 1.15rem;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: white;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 1rem;
+        width: 4px;
+        height: calc(100% - 2rem);
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--accent), var(--primary-2));
+      }
+
+      .timeline-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.3rem;
+        flex-wrap: wrap;
+      }
+
+      .timeline-top strong {
+        color: var(--ink);
+      }
+
+      .timeline-date {
+        color: var(--primary-2);
+        font-weight: 800;
+        font-size: 0.92rem;
+      }
+
+      .timeline-org {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-item ul {
+        margin: 0;
+        padding-left: 1.1rem;
+        color: var(--text);
+      }
+
+      .project-grid,
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .project-thumb {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: linear-gradient(135deg, #dbeafe, #eff6ff 45%, #f8fafc);
+      }
+
+      .project-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.45s ease;
+      }
+
+      .project-card:hover .project-thumb img {
+        transform: scale(1.05);
+      }
+
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 30%,
+          rgba(2, 6, 23, 0.72)
+        );
+      }
+
+      .project-body {
+        padding: 1.3rem;
+      }
+
+      .project-meta {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin: 0.8rem 0 1rem;
+      }
+
+      .tag {
+        padding: 0.45rem 0.7rem;
+        border-radius: 999px;
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .project-link {
+        color: var(--primary-2);
+        font-weight: 800;
+      }
+
+      .cert-grid,
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .mini-card {
+        padding: 1.2rem;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: white;
+      }
+
+      .mini-card h4 {
+        margin-bottom: 0.4rem;
+        color: var(--ink);
+      }
+
+      .mini-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+      }
+
+      .footer-box {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(2, 6, 23, 0.72);
+        backdrop-filter: blur(8px);
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        width: min(1080px, 100%);
+        max-height: 92vh;
+        overflow: auto;
+        background: white;
+        border-radius: 28px;
+        box-shadow: 0 30px 80px rgba(2, 6, 23, 0.26);
+        border: 1px solid rgba(226, 232, 240, 0.95);
+      }
+
+      .modal-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.2rem 1.3rem;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        z-index: 2;
+      }
+
+      .modal-close {
+        border: 0;
+        background: #eff6ff;
+        color: var(--primary);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      .modal-body {
+        padding: 1.35rem;
+      }
+
+      .modal-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 1.3rem;
+      }
+
+      .modal-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.9rem;
+      }
+
+      .modal-gallery img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: #f8fafc;
+      }
+
+      .note {
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .cv-area {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .placeholder-note {
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .contact-grid,
+        .modal-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-gallery {
+          min-height: auto;
+        }
+
+        .grid-3,
+        .grid-2,
+        .project-grid,
+        .gallery-grid,
+        .cert-grid,
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .nav-inner {
+          align-items: flex-start;
+          padding: 0.85rem 0;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          gap: 0.75rem;
+        }
+
+        .hero-card,
+        .card {
+          padding: 1.25rem;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .side-stack {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+        }
+
+        .modal-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="#home" class="brand">Portfolio <span>· Bauwesen</span></a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav class="nav-links" id="navLinks">
+          <a href="#about">Über mich</a>
+          <a href="#skills">Kenntnisse</a>
+          <a href="#education">Ausbildung</a>
+          <a href="#certificates">Zertifikate</a>
+          <a href="#projects">Projekte</a>
+          <a href="#contact">Kontakt</a>
+          <a href="#cv" class="btn btn-primary">CV herunterladen</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-card">
+            <div class="hero-badge">
+              Technikerin im Bauwesen · Hochbau · Planung · Baustelle
+            </div>
+            <h1>
+              Professionelles Portfolio für Ausbildung & Beruf in Deutschland
+            </h1>
+            <p class="lead">
+              Motivierte Technikerin im Bauingenieurwesen mit praktischer
+              Erfahrung im Hochbau sowie in der Planung von Bauprojekten. Ich
+              habe sowohl auf Baustellen als auch im Büro gearbeitet. Mein Ziel
+              ist es, meine Kenntnisse in Deutschland weiterzuentwickeln und
+              aktiv an Bauprojekten mitzuwirken.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
+              <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>5+</strong>
+                <span>berufliche Stationen</span>
+              </div>
+              <div class="stat">
+                <strong>B2</strong>
+                <span>Deutsch – Telc Zertifikat</span>
+              </div>
+              <div class="stat">
+                <strong>2</strong>
+                <span>ausgewählte Bauprojekte</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-gallery">
+            <div class="main-photo">
+              <img src="images/profile-2.jpg" alt="Porträtfoto 1" />
+            </div>
+            <div class="side-stack">
+              <div class="side-photo">
+                <img src="images/profile-1.jpg" alt="Porträtfoto 2" />
+              </div>
+              <div class="side-photo">
+                <img src="images/profile-3.jpg" alt="Porträtfoto 3" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Über mich</div>
+            <h2>Profil & persönliche Informationen</h2>
+            <p class="lead">
+              Ich verbinde technische Grundlagen, praktische Baustellenerfahrung
+              und Organisation im Büro. Besonders wichtig sind mir Genauigkeit,
+              Teamarbeit, Verantwortungsbewusstsein und die Bereitschaft, mich
+              fachlich weiterzuentwickeln.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card soft">
+              <h3>Profilzusammenfassung</h3>
+              <p>
+                Motivierte Technikerin im Bauingenieurwesen mit praktischer
+                Erfahrung im Hochbau sowie in der Planung von Bauprojekten. Ich
+                habe sowohl auf Baustellen als auch im Büro gearbeitet. Mein
+                Ziel ist es, meine Kenntnisse in Deutschland weiterzuentwickeln
+                und aktiv an Bauprojekten mitzuwirken.
+              </p>
+              <p>
+                Ich arbeite strukturiert, lerne schnell und kann technische
+                Informationen klar umsetzen. Durch meine bisherigen Tätigkeiten
+                konnte ich Einblicke in Bauplanung, Mengenermittlung, technische
+                Zeichnungen, Baustellenorganisation und Koordination mit
+                verschiedenen Beteiligten sammeln.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Kurzprofil</h3>
+              <div class="info-list">
+                <div class="info-item">
+                  <span class="kicker">Berufsprofil</span>
+                  <span class="value">Technikerin im Bauwesen</span>
+                </div>
+                <div class="info-item">
+                  <span class="kicker">Fachbereich</span>
+                  <span class="value">Hochbau / Bauplanung</span>
+                </div>
+                <div class="info-item">
+                  <span class="kicker">Sprachen</span>
+                  <span class="value"
+                    >Arabisch, Deutsch, Französisch, Englisch</span
+                  >
+                </div>
+                <div class="info-item">
+                  <span class="kicker">Ziel</span>
+                  <span class="value">Ausbildung / Arbeit in Deutschland</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Kenntnisse</div>
+            <h2>Fachliche Kenntnisse & Kompetenzen</h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="card">
+              <h3>IT-Kenntnisse</h3>
+              <div class="chips">
+                <span class="chip">MS Word</span>
+                <span class="chip">MS Excel</span>
+                <span class="chip">MS PowerPoint</span>
+                <span class="chip">AutoCAD</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Bautechnische Kompetenzen</h3>
+              <div class="chips">
+                <span class="chip">Technische Zeichnungen</span>
+                <span class="chip">Baupläne lesen</span>
+                <span class="chip">Mengenermittlung</span>
+                <span class="chip">Aufmaß</span>
+                <span class="chip">Flächenberechnung</span>
+                <span class="chip">Volumenberechnung</span>
+                <span class="chip">Baustellenplanung</span>
+                <span class="chip">Sicherheitsvorschriften</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Arbeitsweise</h3>
+              <div class="chips">
+                <span class="chip">Genauigkeit</span>
+                <span class="chip">Teamarbeit</span>
+                <span class="chip">Organisation</span>
+                <span class="chip">Verantwortungsbewusstsein</span>
+                <span class="chip">Lernbereitschaft</span>
+                <span class="chip">Kommunikation</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Sprachkenntnisse</h3>
+              <div class="chips">
+                <span class="chip">Arabisch – Muttersprache</span>
+                <span class="chip">Deutsch – B2 (Telc)</span>
+                <span class="chip">Französisch – gute Kenntnisse</span>
+                <span class="chip">Englisch – Grundkenntnisse</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Ausbildung</div>
+            <h2>Ausbildung & Berufserfahrung</h2>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>Ausbildung</h3>
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Technikerin im Bauwesen</strong>
+                    <span class="timeline-date">09/2018 – 06/2020</span>
+                  </div>
+                  <div class="timeline-org">
+                    Fachinstitut für Bauwesen, Casablanca
+                  </div>
+                  <p>Abschluss: Fachdiplom</p>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Baccalauréat</strong>
+                    <span class="timeline-date">09/2017 – 06/2018</span>
+                  </div>
+                  <div class="timeline-org">
+                    Abdellah El Mediouni Gymnasium, Casablanca
+                  </div>
+                  <p>Schwerpunkt: Physikwissenschaften</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Berufserfahrung</h3>
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Technische Assistentin</strong>
+                    <span class="timeline-date">04/2021 – 05/2022</span>
+                  </div>
+                  <div class="timeline-org">
+                    Grandstrauv Marocitalien GmbH, Casablanca
+                  </div>
+                  <ul>
+                    <li>
+                      Überwachung und Kontrolle von Bauprojekten hinsichtlich
+                      Zeitplänen und Budgets
+                    </li>
+                    <li>
+                      Erstellung von technischen Zeichnungen und Bauplänen
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Verwaltungsassistentin</strong>
+                    <span class="timeline-date">06/2022 – 12/2022</span>
+                  </div>
+                  <div class="timeline-org">RACHID ROXY GmbH, Casablanca</div>
+                  <ul>
+                    <li>Persönlicher und telefonischer Empfang von Kunden</li>
+                    <li>Erfassung von Dokumenten und Ablage von Dateien</li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Spezialistin für Bauingenieurwesen</strong>
+                    <span class="timeline-date">09/2023 – 12/2024</span>
+                  </div>
+                  <div class="timeline-org">COTRO GmbH, Rabat</div>
+                  <ul>
+                    <li>
+                      Koordination zwischen verschiedenen Abteilungen und
+                      externen Auftragnehmern
+                    </li>
+                    <li>Berechnung von Mengen und Planung der Baustelle</li>
+                    <li>
+                      Sicherstellung der Einhaltung der Sicherheitsvorschriften
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Design-Büro</strong>
+                    <span class="timeline-date">01/2025 – 04/2025</span>
+                  </div>
+                  <div class="timeline-org">
+                    OCM INGENIERIE GmbH, Casablanca
+                  </div>
+                  <ul>
+                    <li>
+                      Ausarbeitung und Prüfung von Bauplänen und technischen
+                      Zeichnungen
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-top">
+                    <strong>Technikerin im Hochbau</strong>
+                    <span class="timeline-date">06/2025 – 12/2025</span>
+                  </div>
+                  <div class="timeline-org">OUALI BUILD GmbH, Salé</div>
+                  <ul>
+                    <li>
+                      Unterstützung bei der Planung und Überwachung von
+                      Bauprojekten
+                    </li>
+                    <li>
+                      Erstellung und Kontrolle von technischen Plänen und
+                      Mengenermittlungen
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="certificates">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Zertifikate</div>
+            <h2>Zertifikate & Weiterbildung</h2>
+          </div>
+
+          <div class="cert-grid">
+            <div class="card">
+              <h3>Deutschkurs</h3>
+              <p><strong>06/2023 – 12/2024</strong></p>
+              <p>
+                Elite-Institut des Deutschen Premium-Sprachzentrums, Casablanca
+              </p>
+              <div class="chips">
+                <span class="chip">Telc Zertifikat Deutsch B2 (12/2024)</span>
+                <span class="chip">ÖSD Zertifikat B1 (09/2024)</span>
+                <span class="chip">Goethe Zertifikat B1 (04/2024)</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Französischkurs</h3>
+              <p><strong>02/2025</strong></p>
+              <p>Koreanisches Gemeindezentrum, Casablanca</p>
+              <div class="chips">
+                <span class="chip">Französisch Sprachzertifikat A2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Projekte</div>
+            <h2>Ausgewählte Bauprojekte</h2>
+            <p class="lead">
+              Klicke auf ein Projekt, um die Beschreibung und die Projektbilder
+              zu sehen.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="card project-card" data-project="villa">
+              <div class="project-thumb">
+                <img
+                  src="images/villa-1.jpg"
+                  alt="Bau einer zweistöckigen Villa"
+                />
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-body">
+                <h3>Bau einer zweistöckigen Villa</h3>
+                <div class="project-meta">
+                  <span class="tag">Casablanca</span>
+                  <span class="tag">2023</span>
+                  <span class="tag">240 m²</span>
+                </div>
+                <p>
+                  Mitarbeit an einem Villenprojekt mit Fokus auf
+                  Baustellenplanung, Mengenermittlung und Analyse von Bauplänen.
+                </p>
+                <span class="project-link">Details & Bilder ansehen →</span>
+              </div>
+            </article>
+
+            <article class="card project-card" data-project="building">
+              <div class="project-thumb">
+                <img
+                  src="images/building-1.jpg"
+                  alt="Bau eines Gebäudes mit Keller, Erdgeschoss und 3 Etagen"
+                />
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-body">
+                <h3>Bau eines Gebäudes (Keller, Erdgeschoss + 3 Etagen)</h3>
+                <div class="project-meta">
+                  <span class="tag">Rabat</span>
+                  <span class="tag">2025</span>
+                  <span class="tag">238 m²</span>
+                </div>
+                <p>
+                  Erste intensive Baustellenerfahrung mit wertvollen Einblicken
+                  in die praktische Umsetzung von Planung und Bauausführung.
+                </p>
+                <span class="project-link">Details & Bilder ansehen →</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cv">
+        <div class="container">
+          <div class="card soft">
+            <div class="section-head" style="margin-bottom: 1rem">
+              <div class="eyebrow">Lebenslauf</div>
+              <h2>CV herunterladen</h2>
+            </div>
+
+            <div class="cv-area">
+              <a href="cv/lebenslauf.pdf" download class="btn btn-primary"
+                >CV als PDF herunterladen</a
+              >
+              <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+            </div>
+
+            <p class="placeholder-note">
+              Ersetze <strong>cv/lebenslauf.pdf</strong> durch den echten Pfad
+              zu deiner PDF-Datei.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Kontakt</div>
+            <h2>Kontakt aufnehmen</h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card">
+              <h3>Kontaktinformationen</h3>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <span class="kicker">Name</span>
+                  <span class="value">[Dein vollständiger Name]</span>
+                </div>
+                <div class="contact-item">
+                  <span class="kicker">Standort</span>
+                  <span class="value">Casablanca, Marokko</span>
+                </div>
+                <div class="contact-item">
+                  <span class="kicker">Telefon</span>
+                  <span class="value">[Telefonnummer]</span>
+                </div>
+                <div class="contact-item">
+                  <span class="kicker">E-Mail</span>
+                  <span class="value">[E-Mail-Adresse]</span>
+                </div>
+                <div class="contact-item">
+                  <span class="kicker">LinkedIn</span>
+                  <span class="value">[LinkedIn-Profil]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-box">
+        <p>© <span id="year"></span> · Portfolio Technikerin im Bauwesen</p>
+        <p>Erstellt für Bewerbungen, Ausbildung & berufliche Präsentation</p>
+      </div>
+    </footer>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-top">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 0.5rem">
+              Projektansicht
+            </div>
+            <h3 id="modalTitle" style="margin-bottom: 0">Projektname</h3>
+          </div>
+          <button class="modal-close" id="modalClose" aria-label="Schließen">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-grid">
+            <div>
+              <div class="modal-gallery" id="modalGallery"></div>
+            </div>
+            <div>
+              <div class="project-meta" id="modalMeta"></div>
+              <p id="modalDescription"></p>
+              <div class="card soft" style="padding: 1.1rem; margin-top: 1rem">
+                <h3 style="font-size: 1rem">Aufgaben / Erfahrungen</h3>
+                <ul
+                  id="modalTasks"
+                  style="margin: 0; padding-left: 1.1rem"
+                ></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const projects = {
+        villa: {
+          title: "Bau einer zweistöckigen Villa",
+          meta: ["Ort: Casablanca", "Datum: 2023", "Projektfläche: 240 m²"],
+          description:
+            'In diesem Projekt "Bau einer Villa" habe ich in Zusammenarbeit mit einem Ingenieur gearbeitet. Dabei habe ich mehrere Aufgaben übernommen und meine Kenntnisse in der Baustellenorganisation und in der technischen Analyse vertieft.',
+          tasks: [
+            "Planung der Baustelle",
+            "Organisation und Einrichtung der Baustelle",
+            "Erstellung von detaillierten Mengenermittlungen und Aufmaßen",
+            "Lesen und Analyse von Bauplänen",
+            "Anwendung der Regeln und Normen für Stahlbeton",
+          ],
+          images: [
+            "images/villa-1.jpg",
+            "images/villa-2.jpg",
+            "images/villa-3.jpg",
+            "images/villa-4.jpg",
+          ],
+        },
+        building: {
+          title: "Bau eines Gebäudes (Keller, Erdgeschoss + 3 Etagen)",
+          meta: ["Ort: Rabat", "Datum: 2025", "Projektfläche: 238 m²"],
+          description:
+            "Dieses Projekt war meine erste praktische Erfahrung auf einer Baustelle. Dabei konnte ich viele Aspekte der Baupraxis kennenlernen und beobachten, wie die theoretischen Kenntnisse aus der Schule in der Realität angewendet werden. Während dieses Projekts habe ich wertvolle Erfahrungen gesammelt und wichtige Einblicke in den Bauprozess erhalten.",
+          tasks: [
+            "Beobachtung und Unterstützung verschiedener Bauphasen",
+            "Einblick in die praktische Umsetzung von Bauplänen",
+            "Zusammenarbeit mit erfahrenen Ingenieuren und Architekten",
+            "Verständnis für die Abläufe auf der Baustelle vertieft",
+            "Lernen durch direkte Baustellenerfahrung",
+          ],
+          images: [
+            "images/building-1.jpg",
+            "images/building-2.jpg",
+            "images/building-3.jpg",
+            "images/building-4.jpg",
+          ],
+        },
+      };
+
+      const modal = document.getElementById("projectModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalMeta = document.getElementById("modalMeta");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalTasks = document.getElementById("modalTasks");
+      const modalGallery = document.getElementById("modalGallery");
+      const modalClose = document.getElementById("modalClose");
+
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const key = card.dataset.project;
+          const project = projects[key];
+          if (!project) return;
+
+          modalTitle.textContent = project.title;
+          modalDescription.textContent = project.description;
+          modalMeta.innerHTML = project.meta
+            .map((item) => `<span class="tag">${item}</span>`)
+            .join("");
+          modalTasks.innerHTML = project.tasks
+            .map((task) => `<li>${task}</li>`)
+            .join("");
+          modalGallery.innerHTML = project.images
+            .map(
+              (src, index) =>
+                `<img src="${src}" alt="${project.title} – Bild ${index + 1}" loading="lazy" />`,
+            )
+            .join("");
+
+          modal.classList.add("active");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
