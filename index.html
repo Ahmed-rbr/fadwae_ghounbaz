@@ -356,10 +356,14 @@
         font-weight: 700;
       }
 
-      .about-grid,
-      .contact-grid {
+      .about-grid {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.5rem;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 1.5rem;
       }
 
@@ -428,6 +432,12 @@
         color: var(--ink);
         font-weight: 650;
         font-size: 0.94rem;
+        transition: all 0.2s ease;
+      }
+
+      .chip:hover {
+        background: #e2e8f0;
+        cursor: pointer;
       }
 
       .grid-2,
@@ -814,7 +824,7 @@
             </div>
             <div class="side-stack">
               <div class="side-photo">
-                <img src="images/profile-1.jpg" alt="Porträtfoto 2" />
+                <img src="images/profile-4.jpg" alt="Porträtfoto 1" />
               </div>
               <div class="side-photo">
                 <img src="images/profile-3.jpg" alt="Porträtfoto 3" />
@@ -898,6 +908,9 @@
                 <span class="chip">MS Excel</span>
                 <span class="chip">MS PowerPoint</span>
                 <span class="chip">AutoCAD</span>
+                <span class="chip">AutoCAD 2D</span>
+                <span class="chip">AutoDesk Civil 3D</span>
+                <span class="chip">Revit</span>
               </div>
             </div>
 
@@ -918,12 +931,11 @@
             <div class="card">
               <h3>Arbeitsweise</h3>
               <div class="chips">
-                <span class="chip">Genauigkeit</span>
-                <span class="chip">Teamarbeit</span>
-                <span class="chip">Organisation</span>
-                <span class="chip">Verantwortungsbewusstsein</span>
-                <span class="chip">Lernbereitschaft</span>
-                <span class="chip">Kommunikation</span>
+                <span class="chip">Teamfähigkeit & kommunikationsstärke </span>
+
+                <span class="chip">Zuverlässigkeit & Belastbarkeit </span>
+                <span class="chip">Pünktlich & verantwortungsbewusst </span>
+                <span class="chip">Eigeninitiative & Lernbereitschaft</span>
               </div>
             </div>
 
@@ -1300,6 +1312,9 @@
             "images/building-2.jpg",
             "images/building-3.jpg",
             "images/building-4.jpg",
+            "images/building-5.jpg",
+            "images/building-6.jpg",
+            "images/building-7.jpg",
           ],
         },
       };
