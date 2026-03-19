@@ -111,7 +111,11 @@
       p {
         margin-top: 0;
       }
-
+      .d:hover {
+        text-decoration: underline;
+        color: red;
+        transform: scale(1.1);
+      }
       h1,
       h2,
       h3 {
@@ -598,16 +602,10 @@
       .footer {
         padding: 2rem 0 3rem;
         color: var(--muted);
-      }
-
-      .footer-box {
+        margin: auto;
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-        border-top: 1px solid var(--line);
-        padding-top: 1.5rem;
-        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .modal {
@@ -1186,11 +1184,6 @@
               >
               <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
             </div>
-
-            <p class="placeholder-note">
-              Ersetze <strong>cv/lebenslauf.pdf</strong> durch den echten Pfad
-              zu deiner PDF-Datei.
-            </p>
           </div>
         </div>
       </section>
@@ -1208,7 +1201,7 @@
               <div class="contact-list">
                 <div class="contact-item">
                   <span class="kicker">Name</span>
-                  <span class="value">[Dein vollständiger Name]</span>
+                  <span class="value">Fadwa Ghounbaz</span>
                 </div>
                 <div class="contact-item">
                   <span class="kicker">Standort</span>
@@ -1216,15 +1209,13 @@
                 </div>
                 <div class="contact-item">
                   <span class="kicker">Telefon</span>
-                  <span class="value">[Telefonnummer]</span>
+                  <a href="tel:+212602429142" class="value d">+212602429142</a>
                 </div>
                 <div class="contact-item">
                   <span class="kicker">E-Mail</span>
-                  <span class="value">[E-Mail-Adresse]</span>
-                </div>
-                <div class="contact-item">
-                  <span class="kicker">LinkedIn</span>
-                  <span class="value">[LinkedIn-Profil]</span>
+                  <a href="mailto:fadwaghounbaz@gmail.com" class="value d"
+                    >fadwaghounbaz@gmail.com</a
+                  >
                 </div>
               </div>
             </div>
@@ -1234,10 +1225,7 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-box">
-        <p>© <span id="year"></span> · Portfolio Technikerin im Bauwesen</p>
-        <p>Erstellt für Bewerbungen, Ausbildung & berufliche Präsentation</p>
-      </div>
+      <p>© <span id="year"></span> · Portfolio Technikerin im Bauwesen</p>
     </footer>
 
     <div class="modal" id="projectModal" aria-hidden="true">
